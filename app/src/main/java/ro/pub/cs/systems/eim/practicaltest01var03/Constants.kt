@@ -7,5 +7,7 @@ class Constants {
         const val RESULT: String = "result"
         const val CORRECT_BTN: Int = 1
         const val INCORRECT_BTN: Int = 2
+        const val SERVICE_PLUS_RESULT: String = "service_plus_result"
+        const val SERVICE_MINUS_RESULT: String = "service_minus_result"
     }
 }

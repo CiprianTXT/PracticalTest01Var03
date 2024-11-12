@@ -23,6 +23,8 @@ class PracticalTest01Var03MainActivity : AppCompatActivity() {
 
     private lateinit var activity_result_launcher: ActivityResultLauncher<Intent>
 
+    private lateinit var service_intent: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_practical_test01_var03_main)
@@ -67,6 +69,11 @@ class PracticalTest01Var03MainActivity : AppCompatActivity() {
 
             val result = op1_val.toInt() - op2_val.toInt()
             result_textbox.text = "$op1_val - $op2_val = $result"
+
+            service_intent = Intent(this, PracticalTest01Var03Service::class.java)
+            service_intent.putExtra(Constants.SERVICE_PLUS_RESULT, (op1_val.toInt() + op2_val.toInt()).toString())
+            service_intent.putExtra(Constants.SERVICE_MINUS_RESULT, (op1_val.toInt() - op2_val.toInt()).toString())
+            startForegroundService(service_intent)
         }
         switch_activity_btn.setOnClickListener { view ->
             val intent = Intent(this, PracticalTest01Var03SecondaryActivity::class.java)
