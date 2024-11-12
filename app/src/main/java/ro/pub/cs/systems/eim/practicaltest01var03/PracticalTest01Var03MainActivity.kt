@@ -1,6 +1,7 @@
 package ro.pub.cs.systems.eim.practicaltest01var03
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -50,7 +51,30 @@ class PracticalTest01Var03MainActivity : AppCompatActivity() {
             val op2_val = op2.text.toString()
 
             val result = op1_val.toInt() - op2_val.toInt()
-            result_textbox.setText("$op1_val - $op2_val = $result")
+            result_textbox.text = "$op1_val - $op2_val = $result"
         }
+    }
+
+    @Override
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(Constants.OP1, op1.text.toString())
+        outState.putString(Constants.OP2, op2.text.toString())
+        outState.putString(Constants.RESULT, result_textbox.text.toString())
+    }
+
+    @Override
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState.containsKey(Constants.OP1)) {
+            op1.setText(savedInstanceState.getString(Constants.OP1))
+        }
+        if (savedInstanceState.containsKey(Constants.OP2)) {
+            op2.setText(savedInstanceState.getString(Constants.OP2))
+        }
+        if (savedInstanceState.containsKey(Constants.RESULT)) {
+            result_textbox.text = savedInstanceState.getString(Constants.RESULT)
+        }
+        Toast.makeText(this, "Restored state", Toast.LENGTH_SHORT).show()
     }
 }

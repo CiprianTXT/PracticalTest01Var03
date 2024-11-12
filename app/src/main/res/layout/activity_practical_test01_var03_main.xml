@@ -27,6 +27,7 @@
         android:ems="10"
         android:inputType="text"
         android:hint="0"
+        android:saveEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -56,6 +57,7 @@
         android:ems="10"
         android:inputType="text"
         android:hint="0"
+        android:saveEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/plus_btn" />
@@ -64,6 +66,7 @@
         android:id="@+id/result_textbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:saveEnabled="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/op2" />
 
