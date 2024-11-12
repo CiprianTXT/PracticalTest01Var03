@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/op1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,7 +38,7 @@
         android:layout_marginStart="50dp"
         android:text="+"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toBottomOf="@id/op1" />
 
     <Button
         android:id="@+id/minus_btn"
@@ -47,10 +47,10 @@
         android:layout_marginEnd="50dp"
         android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toBottomOf="@id/op1" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/op2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -58,14 +58,14 @@
         android:hint="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plus_btn" />
+        app:layout_constraintTop_toBottomOf="@id/plus_btn" />
 
     <TextView
         android:id="@+id/result_textbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@id/op2" />
 
     <Button
         android:id="@+id/switch_activity_btn"
@@ -74,5 +74,5 @@
         android:text="NAVIGATE TO SECONDARY ACTIVITY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_textbox" />
+        app:layout_constraintTop_toBottomOf="@id/result_textbox" />
 </androidx.constraintlayout.widget.ConstraintLayout>
